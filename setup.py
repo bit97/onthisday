@@ -15,9 +15,24 @@ setup(
     author='bit97',
     author_email='federico.bitondo@gmail.com',
     url='https://github.com/bit97/onthisday',
+    download_url='https://github.com/bit97/onthisday/archive/refs/tags/1.0.tar.gz',
+    keywords=['cli', 'command-line', 'wikipedia', 'scraping', 'today-widget', 'today', 'greetings'],
     license=license,
     install_requires=['Babel', 'beautifulsoup4', 'typer'],
     setup_requires=[],
     tests_require=[],
-    test_suite='tests'
+    test_suite='tests',
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Utilities',
+        'Environment :: Console',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+    ],
+
 )
