@@ -45,5 +45,30 @@ Options:
 ### As a library
 _see the [example file](example.py) provided_ 
 
+## Possible usages
+
+### Shell greeting
+Display a random event as the terminal emulator loads up.
+
+For example, for the fish shell, one can add the following greeting function:
+```angular2html
+> function fish_greeting
+      python -m onthisday random
+  end
+
+> funcsave fish_greeting
+```
+
+Close and reopen the terminal emulator and
+```angular2html
+[2005]  In Iraq inizia il processo all'ex-dittatore Saddam Hussein
+
+~ via 🐍 v3.9.7 
+➜ 
+```
+
+**known issue:** the script is not optimized and makes no use of caches.
+The user experience with this kind of greeting message might not be the best as the command will take around 1 second to run.
+
 ## Issues
 Please open issue on this GitHub repository for any error, suggestion or feature request.
