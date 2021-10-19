@@ -47,4 +47,4 @@ Options:
 _see the [example file](example.py) provided_ 
 
 ## Issues
-Please open issue on this Github repository for any error, suggestion or feature request.
+Please open issue on this GitHub repository for any error, suggestion or feature request.
