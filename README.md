@@ -17,7 +17,7 @@ At the moment the events do not include birth/death of famous people.
 In the root directory:
 
 ```
-> python main.py --help
+> python -m onthisday --help
 
 Usage: main.py [OPTIONS] COMMAND [ARGS]...
 
@@ -31,7 +31,7 @@ Commands:
 For the specific command options:
 
 ```
-> python main.py all --help
+> python -m onthisday all --help
 
 Usage: main.py all [OPTIONS]
 
