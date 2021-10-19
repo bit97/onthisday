@@ -9,7 +9,7 @@ with open('LICENSE') as f:
 setup(
     name='onthisday',
     packages=find_packages(include=['onthisday']),
-    version='0.1.0',
+    version='1.0',
     description='Retrieve events that happened on current day',
     long_description=readme,
     author='bit97',
