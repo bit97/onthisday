@@ -16,7 +16,7 @@ setup(
     author_email='federico.bitondo@gmail.com',
     url='https://github.com/bit97/onthisday',
     license=license,
-    install_requires=['Babel', 'beautifulsoup4'],
+    install_requires=['Babel', 'beautifulsoup4', 'typer'],
     setup_requires=[],
     tests_require=[],
     test_suite='tests'
