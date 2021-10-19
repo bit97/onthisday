@@ -5,7 +5,7 @@ from .source import Wikipedia, AccaddeOggi
 
 
 class Today:
-    def __init__(self, source_name: str) -> None:
+    def __init__(self, source_name: str = 'wiki') -> None:
         source_name = source_name.lower()
         if 'wiki' in source_name:
             self.source = Wikipedia()
@@ -17,16 +17,16 @@ class Today:
     def _retrieve(self, **kwargs) -> List[Event]:
         events = self.source.parse()
 
-        if 'from_year' in kwargs:
-            events = [event for event in events if event.get_year() >= kwargs['from_year']]
+        if 'from_year' in kwargs and kwargs['from_year']:
+            events = [event for event in events if event.get_year() >= int(kwargs['from_year'])]
 
-        if 'to_year' in kwargs:
-            events = [event for event in events if event.get_year() <= kwargs['to_year']]
+        if 'to_year' in kwargs and kwargs['to_year']:
+            events = [event for event in events if event.get_year() <= int(kwargs['to_year'])]
 
         return events
 
-    def last(self, n: int = 1) -> List[Event]:
-        events = self._retrieve()
+    def last(self, n: int = 1, **kwargs) -> List[Event]:
+        events = self._retrieve(**kwargs)
         return events[slice(abs(n) * -1, None)]
 
     def random(self, **kwargs) -> Event:

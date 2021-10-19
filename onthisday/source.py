@@ -53,7 +53,7 @@ class Wikipedia(Source):
                     res.append(self._to_event(year, subevent.text))
             else:
                 # Simple event
-                year, title = re.split(' - | – ', event.text, maxsplit=1)
+                year, title = re.split('-|–', event.text, maxsplit=1)
                 res.append(self._to_event(year, title))
 
         return res
