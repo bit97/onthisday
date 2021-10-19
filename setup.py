@@ -13,7 +13,7 @@ setup(
     author='bit97',
     author_email='federico.bitondo@gmail.com',
     url='https://github.com/bit97/onthisday',
-    download_url='https://github.com/bit97/onthisday/archive/refs/tags/1.0.tar.gz',
+    download_url='https://github.com/bit97/onthisday/archive/refs/tags/1.0.1.tar.gz',
     keywords=['cli', 'command-line', 'wikipedia', 'scraping', 'today-widget', 'today', 'greetings'],
     license='WTFPL',
     install_requires=['Babel', 'beautifulsoup4', 'typer'],
