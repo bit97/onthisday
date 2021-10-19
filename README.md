@@ -9,14 +9,14 @@ At the moment the events do not include birth/death of famous people.
 - [Accadde Oggi](https://www.accaddeoggi.it/) 🇮🇹
 
 ## Install
-...
+`pip install onthisday`
 
 ## Usage
 
 ### As a standalone script
 In the root directory:
 
-```angular2html
+```
 > python main.py --help
 
 Usage: main.py [OPTIONS] COMMAND [ARGS]...
@@ -30,7 +30,7 @@ Commands:
 
 For the specific command options:
 
-```angular2html
+```
 > python main.py all --help
 
 Usage: main.py all [OPTIONS]
@@ -40,7 +40,6 @@ Usage: main.py all [OPTIONS]
 Options:
   --source TEXT  [default: wiki]
   --help         Show this message and exit.
-
 ```
 
 ### As a library
