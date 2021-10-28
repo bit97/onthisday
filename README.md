@@ -1,5 +1,8 @@
 # onthisday
 
+[![DeepSource](https://deepsource.io/gh/bit97/onthisday.svg/?label=active+issues&token=kFcXBryjHHiGKQ6JebSE3hfw)](https://deepsource.io/gh/bit97/onthisday/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/bit97/onthisday.svg/?label=resolved+issues&token=kFcXBryjHHiGKQ6JebSE3hfw)](https://deepsource.io/gh/bit97/onthisday/?ref=repository-badge)
+
 Simple library that retrieves the historical events that happened on current day.
 
 At the moment the events do not include birth/death of famous people.
