@@ -14,7 +14,7 @@ class Source(ABC):
         self.today = date.today()
 
     def parse(self) -> List[Event]:
-        pass
+        pass    # interface method
 
     @staticmethod
     def _get_soup(url: str) -> BeautifulSoup:
