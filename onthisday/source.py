@@ -1,7 +1,7 @@
 from datetime import date
 from babel.dates import format_date
 from typing import List
-from urllib.request import urlopen
+from urllib import request, response
 from bs4 import BeautifulSoup
 from abc import ABC
 from .event import Event
@@ -20,9 +20,12 @@ class Source(ABC):
     def _get_soup(url: str) -> BeautifulSoup:
         # Validate URL before opening it
         if url.lower().startswith('https'):
-            return BeautifulSoup(urlopen(url), 'html.parser')
+            req = request.Request(url)
+        else:
+            raise ValueError('Not going to get resource from unsecure URL')
 
-        raise ValueError('Not going to get resource from unsecure URL')
+        with request.urlopen(req) as body:
+            return BeautifulSoup(body, 'html.parser')
 
 
 class Wikipedia(Source):
