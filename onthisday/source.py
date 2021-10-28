@@ -24,7 +24,7 @@ class Source(ABC):
         else:
             raise ValueError('Not going to get resource from unsecure URL')
 
-        with request.urlopen(req) as body:
+        with request.urlopen(req) as body:  # skipcq: BAN-B310
             return BeautifulSoup(body, 'html.parser')
 
 
