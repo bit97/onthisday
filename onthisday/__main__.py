@@ -31,7 +31,7 @@ def random_(source: str = 'wiki', from_year: Optional[str] = None, to_year: Opti
 def list_() -> None:
     """List the available sources (valid shorter names in brackets)"""
     available_sources = ['Wikipedia (wiki)', 'Accadde Oggi (accadde)']
-    print(f'\nAvailable sources:\n')
+    print('\nAvailable sources:\n')
 
     for source in available_sources:
         print(f'    • {source}')
