@@ -16,6 +16,14 @@ class Source(ABC):
     def parse(self) -> List[Event]:
         pass
 
+    @staticmethod
+    def _get_soup(url: str) -> BeautifulSoup:
+        # Validate URL before opening it
+        if url.lower().startswith('https'):
+            return BeautifulSoup(urlopen(url), 'html.parser')
+
+        raise ValueError('Not going to get resource from unsecure URL')
+
 
 class Wikipedia(Source):
     URL_PREFIX = "https://it.wikipedia.org/wiki"
@@ -37,7 +45,7 @@ class Wikipedia(Source):
         day = format_date(self.today, "d_MMMM", locale='it')
         url = f'{self.URL_PREFIX}/{day}'
 
-        soup = BeautifulSoup(urlopen(url), 'html.parser')
+        soup = self._get_soup(url)
 
         event_title = soup.find(id='Eventi').parent
         event_list = event_title.find_next_sibling().find_all('li', recursive=False)
@@ -67,7 +75,7 @@ class AccaddeOggi(Source):
         return Event(year=int(year.strip()), title=title.strip())
 
     def parse(self) -> List[Event]:
-        soup = BeautifulSoup(urlopen(self.URL), 'html.parser')
+        soup = self._get_soup(self.URL)
 
         stop_tag = soup.find(text='Sono nati oggi')
 

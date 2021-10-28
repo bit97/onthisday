@@ -6,7 +6,7 @@ with open('README.md') as f:
 setup(
     name='onthisday',
     packages=find_packages(include=['onthisday']),
-    version='1.0.1',
+    version='1.0.2',
     description='Retrieve events that happened on current day',
     long_description=readme,
     long_description_content_type='text/markdown',
