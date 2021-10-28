@@ -3,8 +3,10 @@ from abc import ABC
 from datetime import date
 from typing import List
 from urllib import request
+
 from babel.dates import format_date
 from bs4 import BeautifulSoup
+
 from .event import Event
 
 
