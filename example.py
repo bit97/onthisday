@@ -1,8 +1,7 @@
 from onthisday import Today
 
-
 # Wikipedia source
-wiki = Today('wiki')
+wiki = Today("wiki")
 # or
 # wiki = Today()
 # as the wikipedia event is the default one

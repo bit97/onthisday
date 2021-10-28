@@ -1,27 +1,34 @@
 from random import choice
 from typing import List
+
 from .event import Event
-from .source import Wikipedia, AccaddeOggi
+from .source import AccaddeOggi, Wikipedia
 
 
 class Today:
-    def __init__(self, source_name: str = 'wiki') -> None:
+    def __init__(self, source_name: str = "wiki") -> None:
         source_name = source_name.lower()
-        if 'wiki' in source_name:
+        if "wiki" in source_name:
             self.source = Wikipedia()
-        elif 'accadde' in source_name:
+        elif "accadde" in source_name:
             self.source = AccaddeOggi()
         else:
-            raise NotImplementedError(f'Unsupported source type {source_name}')
+            raise NotImplementedError(f"Unsupported source type {source_name}")
 
     def _retrieve(self, **kwargs) -> List[Event]:
         events = self.source.parse()
 
-        if 'from_year' in kwargs and kwargs['from_year']:
-            events = [event for event in events if event.get_year() >= int(kwargs['from_year'])]
+        if "from_year" in kwargs and kwargs["from_year"]:
+            events = [
+                event
+                for event in events
+                if event.get_year() >= int(kwargs["from_year"])
+            ]
 
-        if 'to_year' in kwargs and kwargs['to_year']:
-            events = [event for event in events if event.get_year() <= int(kwargs['to_year'])]
+        if "to_year" in kwargs and kwargs["to_year"]:
+            events = [
+                event for event in events if event.get_year() <= int(kwargs["to_year"])
+            ]
 
         return events
 
