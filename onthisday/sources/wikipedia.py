@@ -8,8 +8,10 @@ from ..source import Source
 
 
 class Wikipedia(Source):
-    """Source derived class for Wikipedia's today articles.
-    Support for multiple languages"""
+    """
+    Source derived class for Wikipedia's today articles.
+    Support for multiple languages
+    """
 
     DEFAULT_LOCALE = "en"
 
@@ -33,8 +35,10 @@ class Wikipedia(Source):
         return year, title
 
     def _build_date(self, locale: str) -> str:
-        """Build the date portion of the URL, eventually operating on the representation of the day if the
-        locale requires it"""
+        """
+        Build the date portion of the URL, eventually operating on the representation of the day if the
+        locale requires it
+        """
         date = format_date(self.today, "d_MMMM", locale=self.locale)
 
         # Handle exceptions

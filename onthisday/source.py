@@ -9,8 +9,10 @@ from .event import Event
 
 
 class Source(ABC):
-    """Abstract Source class. Classes that will derive from this will
-    have to implement abstract method and provide a parsing of the webpage"""
+    """
+    Abstract Source class. Classes that will derive from this will
+    have to implement abstract method and provide a parsing of the webpage
+    """
 
     def __init__(self) -> None:
         """Construct an abstract source class"""
