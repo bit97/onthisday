@@ -25,8 +25,8 @@ setup(
     ],
     license="WTFPL",
     install_requires=["Babel", "beautifulsoup4", "typer"],
-    setup_requires=[],
-    tests_require=[],
+    setup_requires=[pytest-runner],
+    tests_require=[pytest],
     test_suite="tests",
     classifiers=[
         "Development Status :: 3 - Alpha",
