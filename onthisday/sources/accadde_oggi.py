@@ -1,8 +1,8 @@
-from ..source import Source
-from ..event import Event
-
-from typing import List
 import re
+from typing import List
+
+from ..event import Event
+from ..source import Source
 
 
 class AccaddeOggi(Source):
@@ -18,7 +18,7 @@ class AccaddeOggi(Source):
         res = []
         for event in event_list:
             text = event.find("a").text
-            text = text.replace('&nbsp;', '')
+            text = text.replace("&nbsp;", "")
 
             year, title = re.split("-|–", text, maxsplit=1)
             res.append(self.to_event(year, title))

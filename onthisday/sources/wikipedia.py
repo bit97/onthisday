@@ -1,9 +1,10 @@
-from ..source import Source
-from ..event import Event
-
-from typing import List, Tuple, Optional
 import re
+from typing import List, Optional, Tuple
+
 from babel.dates import format_date
+
+from ..event import Event
+from ..source import Source
 
 
 class Wikipedia(Source):
@@ -30,12 +31,12 @@ class Wikipedia(Source):
         date = format_date(self.today, "d_MMMM", locale=self.locale)
 
         # Handle exceptions
-        if locale in ('es', 'pt'):
-            idx = date.find('_')
-            date = date[:idx] + '_de' + date[idx:]
-        elif locale == 'de':
-            idx = date.find('_')
-            date = date[:idx] + '.' + date[idx:]
+        if locale in ("es", "pt"):
+            idx = date.find("_")
+            date = date[:idx] + "_de" + date[idx:]
+        elif locale == "de":
+            idx = date.find("_")
+            date = date[:idx] + "." + date[idx:]
 
         return date
 
@@ -49,7 +50,7 @@ class Wikipedia(Source):
         soup = self.get_soup(url)
 
         # Retrieve "Events" h2 tag
-        starting_tag = soup.findAll('h2')[1]
+        starting_tag = soup.findAll("h2")[1]
 
         # Limit the research to "Events" tag only, i.e. stop at the next h2 tag
         ending_tag = starting_tag.find_next_sibling("h2")
@@ -66,7 +67,7 @@ class Wikipedia(Source):
 
             # Find all the lists in the "Events" tag and populate the event_list
             # with <li> elements
-            if tag.name == 'ul':
+            if tag.name == "ul":
                 event_list.extend(tag.find_all("li", recursive=False))
 
         raw_events = []
@@ -79,7 +80,7 @@ class Wikipedia(Source):
                 for subevent in subevents.find_all("li"):
                     title = subevent.text
                     raw_events.append((year, title))
-            elif event.text.strip() != '':
+            elif event.text.strip() != "":
                 # Simple event
                 try:
                     year, title = re.split("-|–|—|:|ː", event.text, maxsplit=1)

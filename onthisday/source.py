@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from datetime import date
 from typing import List
 from urllib import request
+
 from bs4 import BeautifulSoup
 
 from .event import Event
