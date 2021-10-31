@@ -37,7 +37,7 @@ jobs:
           --cov=. --cov-report xml
 
     - name: Report results to DeepSource
-        run: |
+      run: |
 
         # Install deepsource CLI
           curl https://deepsource.io/cli | sh
