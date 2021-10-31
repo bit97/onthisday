@@ -33,17 +33,17 @@ jobs:
 
     - name: Test with pytest and coverage report
       run: |
-        pytest --exitfirst --verbose --failed-first \
-          --cov=. --cov-report xml
+        pytest --exitfirst --verbose --failed-first --cov=. --cov-report xml
 
     - name: Report results to DeepSource
       run: |
+        coverage xml
 
         # Install deepsource CLI
-          curl https://deepsource.io/cli | sh
+        curl https://deepsource.io/cli | sh
 
         # From the root directory, run the report coverage command
-          ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
+        ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
 
       env:
         DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
