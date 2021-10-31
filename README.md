@@ -8,7 +8,7 @@ Simple library that retrieves the historical events that happened on current day
 At the moment the events do not include birth/death of famous people.
 
 ## Event sources
-- [Italian Wikipedia](https://it.wikipedia.org/wiki/Oggi) 🇮🇹
+- [Wikipedia](https://www.wikipedia.org/) 🇮🇹🇺🇸🇬🇧🇫🇷🇩🇪🇪🇸🇵🇹 (other countries may work, not tested)
 - [Accadde Oggi](https://www.accaddeoggi.it/) 🇮🇹
 
 ## Install
@@ -42,6 +42,7 @@ Usage: main.py all [OPTIONS]
 
 Options:
   --source TEXT  [default: wiki]
+  --locale TEXT
   --help         Show this message and exit.
 ```
 

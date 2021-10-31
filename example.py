@@ -1,7 +1,16 @@
 from onthisday import Today
 
+SUPPORTED_LOCALES = [
+    "it",
+    "en",
+    "es",
+    "pt",
+    "de",
+    "fr"
+]
+
 # Wikipedia source
-wiki = Today("wiki")
+wiki = Today("wiki", SUPPORTED_LOCALES[0])
 # or
 # wiki = Today()
 # as the wikipedia event is the default one
@@ -19,7 +28,13 @@ print(wiki.last()[0])
 print(wiki.random())
 
 # Same, but with year range
-print(wiki.random(from_year=1980, to_year=2005))
+try:
+    print(wiki.random(from_year=1980, to_year=2005))
+except IndexError:
+    print("No event for specified range")
 
 # Same, but with BC years
-print(wiki.random(to_year=-5))  # i.e. until 5 BC
+try:
+    print(wiki.random(to_year=-5))  # i.e. until 5 BC
+except IndexError:
+    print("No event for specified range")
