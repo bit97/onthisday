@@ -6,14 +6,14 @@ with open("README.md") as f:
 setup(
     name="onthisday",
     packages=find_packages(include=["onthisday"]),
-    version="1.0.2",
+    version="1.1.0",
     description="Retrieve events that happened on current day",
     long_description=readme,
     long_description_content_type="text/markdown",
     author="bit97",
     author_email="federico.bitondo@gmail.com",
     url="https://github.com/bit97/onthisday",
-    download_url="https://github.com/bit97/onthisday/archive/refs/tags/1.0.1.tar.gz",
+    download_url="https://github.com/bit97/onthisday/archive/refs/tags/1.1.0.tar.gz",
     keywords=[
         "cli",
         "command-line",
