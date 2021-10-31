@@ -11,24 +11,20 @@ from .event import Event
 class Source(ABC):
     def __init__(self) -> None:
         """Construct an abstract source class"""
-
         self.today = date.today()
 
     @abstractmethod
     def parse(self) -> List[Event]:
         """Interface method that allow parsing of events"""
-
         pass
 
     @staticmethod
     def to_event(year: str, title: str, bc: bool = False) -> Event:
         """Creates an event based on its string representation"""
-
         return Event(int(year.split()[0]), title.strip(), bc)
 
     def get_soup(self, url: str) -> BeautifulSoup:
         """Returns an instance of BeautifulSoup parser. Raise an exception on insecure URL"""
-
         if not self._validate_url(url):
             raise ValueError("Not going to get resource from unsecure URL")
 
@@ -39,5 +35,4 @@ class Source(ABC):
     @staticmethod
     def _validate_url(url: str) -> bool:
         """Validate URL by only allowing secure connections"""
-
         return url.lower().startswith("https")
