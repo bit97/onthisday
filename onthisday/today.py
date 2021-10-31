@@ -19,7 +19,6 @@ class Today:
 
     def _retrieve(self, **kwargs) -> List[Event]:
         """Parse the events and retrieve them, eventually filtered based on passed arguments"""
-
         events = self.source.parse()
 
         if "from_year" in kwargs and kwargs["from_year"]:
