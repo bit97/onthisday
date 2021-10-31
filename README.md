@@ -3,6 +3,9 @@
 [![DeepSource](https://deepsource.io/gh/bit97/onthisday.svg/?label=active+issues&token=kFcXBryjHHiGKQ6JebSE3hfw)](https://deepsource.io/gh/bit97/onthisday/?ref=repository-badge)
 [![DeepSource](https://deepsource.io/gh/bit97/onthisday.svg/?label=resolved+issues&token=kFcXBryjHHiGKQ6JebSE3hfw)](https://deepsource.io/gh/bit97/onthisday/?ref=repository-badge)
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
 Simple library that retrieves the historical events that happened on current day.
 
 At the moment the events do not include birth/death of famous people.
