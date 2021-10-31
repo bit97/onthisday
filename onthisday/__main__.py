@@ -29,7 +29,10 @@ def last_(
 
 @app.command(name="random")
 def random_(
-    source: str = "wiki", locale: Optional[str] = None, from_year: Optional[str] = None, to_year: Optional[str] = None
+    source: str = "wiki",
+    locale: Optional[str] = None,
+    from_year: Optional[str] = None,
+    to_year: Optional[str] = None,
 ) -> None:
     """Print random event of today"""
     event_source = Today(source, locale)
@@ -41,7 +44,7 @@ def list_() -> None:
     """List the available sources (valid shorter names in brackets)"""
     available_sources = [
         "Wikipedia (wiki) [with different locales]",
-        "Accadde Oggi (accadde)"
+        "Accadde Oggi (accadde)",
     ]
     print("\nAvailable sources:\n")
 

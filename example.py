@@ -1,13 +1,6 @@
 from onthisday import Today
 
-SUPPORTED_LOCALES = [
-    "it",
-    "en",
-    "es",
-    "pt",
-    "de",
-    "fr"
-]
+SUPPORTED_LOCALES = ["it", "en", "es", "pt", "de", "fr"]
 
 # Wikipedia source
 wiki = Today("wiki", SUPPORTED_LOCALES[0])
