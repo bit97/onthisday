@@ -16,7 +16,6 @@ class Source(ABC):
     @abstractmethod
     def parse(self) -> List[Event]:
         """Interface method that allow parsing of events"""
-        pass
 
     @staticmethod
     def to_event(year: str, title: str, bc: bool = False) -> Event:
