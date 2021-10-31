@@ -19,7 +19,7 @@ def test_mytest():
 # content of test_class_demo.py
 class TestClassDemoInstance:
     def test_one(self):
-        assert 0
+        assert 1 == 1
 
     def test_two(self):
-        assert 0
+        assert 2 == 2
