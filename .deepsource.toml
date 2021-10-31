@@ -13,6 +13,10 @@ enabled = true
 name = "test-coverage"
 enabled = true
 
+[[analyzers]]
+name = "secrets"
+enabled = true
+
 [[transformers]]
 name = "isort"
 enabled = true
