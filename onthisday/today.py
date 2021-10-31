@@ -2,14 +2,14 @@ from random import choice
 from typing import List
 
 from .event import Event
-from .source import AccaddeOggi, Wikipedia
+from .sources import AccaddeOggi, Wikipedia
 
 
 class Today:
-    def __init__(self, source_name: str = "wiki") -> None:
+    def __init__(self, source_name: str = "wiki", locale: str = None) -> None:
         source_name = source_name.lower()
         if "wiki" in source_name:
-            self.source = Wikipedia()
+            self.source = Wikipedia(locale)
         elif "accadde" in source_name:
             self.source = AccaddeOggi()
         else:
