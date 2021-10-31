@@ -3,6 +3,9 @@ from dataclasses import dataclass
 
 @dataclass
 class Event:
+    """Simple class for representing an event, characterized by a year (eventually BC)
+    and a title"""
+
     year: int
     title: str
     bc: bool = False

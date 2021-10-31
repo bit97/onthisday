@@ -6,9 +6,12 @@ from ..source import Source
 
 
 class AccaddeOggi(Source):
+    """Source derived class for Accadde Oggi (https://www.accaddeoggi.it)"""
+
     URL = "https://www.accaddeoggi.it"
 
     def parse(self) -> List[Event]:
+        """Implementation of the abstract method"""
         soup = self.get_soup(self.URL)
 
         stop_tag = soup.find(text="Sono nati oggi")

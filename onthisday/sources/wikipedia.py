@@ -8,6 +8,9 @@ from ..source import Source
 
 
 class Wikipedia(Source):
+    """Source derived class for Wikipedia's today articles.
+    Support for multiple languages"""
+
     DEFAULT_LOCALE = "en"
 
     def __init__(self, locale: str = None) -> None:
@@ -16,9 +19,11 @@ class Wikipedia(Source):
 
     @staticmethod
     def _remove_tags(text: str) -> str:
+        """Utility to remove text contained in square brackets"""
         return re.sub(r"\[\d+]", "", text)
 
     def _sanitize(self, year: str, title: str) -> Tuple[str, str, Optional[bool]]:
+        """Utility to return a tuple ready to be converted into an Event"""
         title = self._remove_tags(title)
 
         if "a.C." in year:
@@ -28,6 +33,8 @@ class Wikipedia(Source):
         return year, title
 
     def _build_date(self, locale: str) -> str:
+        """Build the date portion of the URL, eventually operating on the representation of the day if the
+        locale requires it"""
         date = format_date(self.today, "d_MMMM", locale=self.locale)
 
         # Handle exceptions
@@ -41,11 +48,13 @@ class Wikipedia(Source):
         return date
 
     def _build_url(self) -> str:
+        """Build the URL to download the events from"""
         day = self._build_date(self.locale)
 
         return f"https://{self.locale}.wikipedia.org/wiki/{day}"
 
     def parse(self) -> List[Event]:
+        """Implementation of the abstract method"""
         url = self._build_url()
         soup = self.get_soup(url)
 
