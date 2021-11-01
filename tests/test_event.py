@@ -2,6 +2,10 @@ import pytest
 from onthisday.event import Event
 
 
+def test_missing_bc():
+    assert Event(0, "Dummy title") == Event(0, "Dummy title", False)
+
+
 @pytest.mark.parametrize("test_input,expected", [((1900, False), 1900), ((0, False), 0), ((0, True), 0)])
 def test_get_positive_year(test_input, expected):
     (year, bc) = test_input
