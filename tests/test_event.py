@@ -1,5 +1,5 @@
 import pytest
-from event import Event
+from onthisday.event import Event
 
 
 @pytest.mark.parametrize("test_input,expected", [((1900, False), 1900), ((0, False), 0), ((0, True), 0)])
