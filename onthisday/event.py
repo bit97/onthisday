@@ -12,6 +12,15 @@ class Event:
     title: str
     bc: bool = False
 
+    def __post_init__(self) -> None:
+        """
+        Perform post init conversion:
+          - accept only positive years
+
+        :return:
+        """
+        self.year = abs(self.year)
+
     def __str__(self) -> str:
         """String representation of the event"""
         return f'[{self.year}{" a.C." if self.bc else ""}] ' f"{self.title}"

@@ -1,3 +1,5 @@
 pytest
+pytest-randomly
+pytest-mock
 pytest-cov
 pytest-github-actions-annotate-failures
