@@ -1,5 +1,5 @@
 import pytest
-from event import Event
+from onthisday.event import Event
 
 
 @pytest.fixture
